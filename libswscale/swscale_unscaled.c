@@ -1966,7 +1966,7 @@ static int planarCopyWrapper(SwsContext *c, const uint8_t *src[],
 }
 
 
-#define IS_DIFFERENT_ENDIANESS(src_fmt, dst_fmt, pix_fmt)          \
+#define IS_DIFFERENT_ENDIANNESS(src_fmt, dst_fmt, pix_fmt)          \
     ((src_fmt == pix_fmt ## BE && dst_fmt == pix_fmt ## LE) ||     \
      (src_fmt == pix_fmt ## LE && dst_fmt == pix_fmt ## BE))
 
@@ -2111,59 +2111,59 @@ void ff_get_unscaled_swscale(SwsContext *c)
     }
 
     /* bswap 16 bits per pixel/component packed formats */
-    if (IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BAYER_BGGR16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BAYER_RGGB16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BAYER_GBRG16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BAYER_GRBG16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BGR444) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BGR48)  ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BGR555) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BGR565) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_BGRA64) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY9)  ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY10) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY12) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY14) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YA16)   ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_AYUV64) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP9)  ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP10) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP12) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP14) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAP10) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAP12) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAP14) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAP16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_RGB444) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_RGB48)  ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_RGB555) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_RGB565) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_RGBA64) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_XYZ12)  ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P9)  ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P10) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P12) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P14) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P9)  ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P10) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P12) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P14) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P16) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV440P10) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV440P12) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P9)  ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P10) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P12) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P14) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P16))
+    if (IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BAYER_BGGR16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BAYER_RGGB16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BAYER_GBRG16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BAYER_GRBG16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BGR444) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BGR48)  ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BGR555) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BGR565) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_BGRA64) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY9)  ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY10) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY12) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY14) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GRAY16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YA16)   ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_AYUV64) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP9)  ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP10) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP12) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP14) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRP16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAP10) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAP12) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAP14) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAP16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_RGB444) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_RGB48)  ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_RGB555) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_RGB565) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_RGBA64) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_XYZ12)  ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P9)  ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P10) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P12) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P14) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV420P16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P9)  ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P10) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P12) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P14) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV422P16) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV440P10) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV440P12) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P9)  ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P10) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P12) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P14) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_YUV444P16))
         c->convert_unscaled = bswap_16bpc;
 
     /* bswap 32 bits per pixel/component formats */
-    if (IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRPF32) ||
-        IS_DIFFERENT_ENDIANESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAPF32))
+    if (IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRPF32) ||
+        IS_DIFFERENT_ENDIANNESS(srcFormat, dstFormat, AV_PIX_FMT_GBRAPF32))
         c->convert_unscaled = bswap_32bpc;
 
     if (usePal(srcFormat) && isByteRGB(dstFormat))
